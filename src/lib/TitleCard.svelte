@@ -1,5 +1,5 @@
 <script>
-    let {title} = $props();
+    let {title, title2} = $props();
     import { fade, fly } from "svelte/transition";
     let titleCardIsVisible = $state(false);
 
@@ -31,11 +31,12 @@
 <div
     class="title-card"
     use:observe={observeTitleCard}
-    in:fly={{ y: 200, duration: 2000 }}
+    in:fly={{y: 200, duration: 2000}}
     out:fade>
     {#if titleCardIsVisible}
         <div class="content">
             <h1>{title}</h1>
+            <h1>{title2}</h1>
         </div>
     {/if}
 </div>
